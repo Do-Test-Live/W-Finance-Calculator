@@ -34,103 +34,106 @@
             <div class="row">
                 <div class="col-lg-8">
                     <form method="post" action="insert.php">
-                        <h1 class="mb-3">即時申請</h1>
+                        <h1 class="mb-3">Apply for Loan</h1>
                         <div class="row">
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">中文姓名</label>
-                                <input type="text" class="form-control" name="c_name" placeholder="黃金強" required>
+                                <label class="form-label">Chinese Name</label>
+                                <input type="text" class="form-control" name="c_name" required>
                             </div>
                             <div class="col-lg-6 mb-3">
-                                <label class="form-label">英文姓名(須與身份証相同)</label>
-                                <input type="text" class="form-control" name="e_name" placeholder="Wong Kam Keung" required>
+                                <label class="form-label">English Name (must be the same as ID card) </label>
+                                <input type="text" class="form-control" name="e_name" required>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">身份証號碼 </label>
-                                <input type="text" class="form-control" name="identy_num" placeholder="A1234xx(x)" required>
+                                <label class="form-label">Identification Number </label>
+                                <input type="text" class="form-control" name="identy_num" required>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">出生日期 (YYYY-MM-DD) </label>
-                                <input type="text" class="form-control" name="dob" placeholder="1980-12-20" required>
+                                <label class="form-label">Date of Birth </label>
+                                <input type="date" class="form-control" name="dob" required>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">聯絡電話</label>
-                                <input type="text" class="form-control" name="contact_num" placeholder="98880888" required>
+                                <label class="form-label">Contact Number </label>
+                                <input type="text" class="form-control" name="contact_num" required>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">出糧方式</label>
+                                <label class="form-label">Payment Method </label>
                                 <select class="form-select" name="pay_method" required>
                                     <option selected>Choose..</option>
-                                    <option value="Automatic transfer">自動轉賬</option>
-                                    <option value="Cheque">支票</option>
-                                    <option value="Cash">現金</option>
-                                    <option value="No income">沒有收入</option>
+                                    <option value="Automatic transfer">Automatic transfer</option>
+                                    <option value="Cheque">Cheque</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="No income">No income</option>
                                 </select>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">申請人</label>
+                                <label class="form-label">Applicant Type</label>
                                 <select class="form-select" name="applicant_type" required>
                                     <option selected>Choose..</option>
-                                    <option value="New application client">新申請客戶</option>
-                                    <option value="Existing customers">現有客戶</option>
+                                    <option value="New application client">New application client</option>
+                                    <option value="Existing customers">Existing customers</option>
                                 </select>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">貸款額度 (HK$)</label>
-                                <input type="number" class="form-control" name="loan_amount" placeholder="100000" required>
+                                <label class="form-label">Loan Amount </label>
+                                <input type="number" class="form-control" name="loan_amount" required>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">其他資料</label>
-                                <textarea class="form-control" rows="3" name="other_info" placeholder="如指定聯絡時間" required></textarea>
+                                <label class="form-label">Other Information </label>
+                                <textarea class="form-control" rows="3" name="other_info" required></textarea>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                                     <label class="form-check-label" for="exampleCheck1">
-                                        本人申請時確認年滿18歲或以上，同意放債人條例及個人資料收集聲明。
+                                        When I apply, I confirm that I am 18 years old or above, and I agree to the
+                                        Money Lenders Ordinance and the Personal Information Collection Statement.
                                     </label>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <button type="submit" class="btn btn-warning w-100" name="loanApply">立即申請</button>
+                                <button type="submit" class="btn btn-warning w-100" name="loanApply">Apply</button>
                             </div>
                             <div class="col-6">
-                                <a href="index.php" class="btn btn-secondary w-100">重置</a>
+                                <a href="index.php" class="btn btn-secondary w-100">Reset</a>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-4">
                     <div>
-                        <h1>理財計算機</h1>
+                        <h1>Financial Calculator</h1>
                         <p>
-                            我們可即使為你計算出還款額度。
+                            We can even calculate the repayment amount for you.
                         </p>
                         <p>
-                            我們以月平息計算。定息定本，一目了然！
+                            We calculate it on a monthly flat basis. Fixed rate fixed book, at a glance!
                         </p>
                     </div>
                     <form>
                         <div class="mb-3">
-                            <label for="loan_amount" class="form-label">貸款額 <span
+                            <label for="loan_amount" class="form-label">Loan Amount <span
                                     class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="loan_amount" placeholder="HK$10,000" onkeyup="calculate()"
+                            <input type="text" class="form-control" id="loan_amount" onkeyup="calculate()"
                                    onkeydown="calculate()">
                         </div>
                         <div class="mb-3">
-                            <label for="repayment_period" class="form-label">還款期數 <span class="text-danger">*</span></label>
+                            <label for="repayment_period" class="form-label">Repayment Period <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="repayment_period" min="4" max="24"
-                                   onkeyup="calculate()" onkeydown="calculate()" placeholder="12">
+                                   onkeyup="calculate()" onkeydown="calculate()">
                         </div>
                         <div class="mb-3">
-                            <label for="monthly_flat" class="form-label">月平息 %</label>
+                            <label for="monthly_flat" class="form-label">Monthly Flat %</label>
                             <input type="text" class="form-control" id="monthly_flat" onkeyup="calculate()"
-                                   onkeydown="calculate()" placeholder="2.8">
+                                   onkeydown="calculate()">
                         </div>
                         <div class="mb-3">
-                            <label for="repayment_period" class="form-label">參考還款額</label>
-                            <input type="text" class="form-control" id="reference_repayment_amount" placeholder="HK$1113" readonly>
+                            <label for="repayment_period" class="form-label">Reference repayment amount</label>
+                            <input type="text" class="form-control" id="reference_repayment_amount" readonly>
                             <p>
-                                <span class="text-danger">*</span> 貸款計算機所顯示之利率僅供參考，一切貸款申請利率均以最後批核為準。
+                                <span class="text-danger">*</span> The interest rate displayed by the loan calculator is
+                                for reference only, and all loan
+                                application interest rates are subject to the final approval.
                             </p>
                         </div>
                     </form>
