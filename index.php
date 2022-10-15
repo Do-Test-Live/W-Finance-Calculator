@@ -33,31 +33,32 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-8">
-                    <form>
+                    <form method="post" action="insert.php">
+                        <h1 class="mb-3">Apply for Loan</h1>
                         <div class="row">
                             <div class="col-lg-6 mb-3">
                                 <label class="form-label">Chinese Name</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="c_name" required>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <label class="form-label">English Name (must be the same as ID card) </label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="e_name" required>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Identification Number </label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="identy_num" required>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Date of Birth </label>
-                                <input type="date" class="form-control" required>
+                                <input type="date" class="form-control" name="dob" required>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Contact Number </label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="contact_num" required>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Payment Method </label>
-                                <select class="form-select" required>
+                                <select class="form-select" name="pay_method" required>
                                     <option selected>Choose..</option>
                                     <option value="Automatic transfer">Automatic transfer</option>
                                     <option value="Cheque">Cheque</option>
@@ -66,8 +67,8 @@
                                 </select>
                             </div>
                             <div class="col-lg-12 mb-3">
-                                <label class="form-label">Applicant </label>
-                                <select class="form-select" required>
+                                <label class="form-label">Applicant Type</label>
+                                <select class="form-select" name="applicant_type" required>
                                     <option selected>Choose..</option>
                                     <option value="New application client">New application client</option>
                                     <option value="Existing customers">Existing customers</option>
@@ -75,11 +76,11 @@
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Loan Amount </label>
-                                <input type="number" class="form-control" required>
+                                <input type="number" class="form-control" name="loan_amount" required>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <label class="form-label">Other Information </label>
-                                <textarea class="form-control" rows="3" required></textarea>
+                                <textarea class="form-control" rows="3" name="other_info" required></textarea>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <div class="form-check">
@@ -91,17 +92,17 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn btn-warning w-100">Apply</button>
+                                <button type="submit" class="btn btn-warning w-100" name="loanApply">Apply</button>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn btn-secondary w-100">Cancel</button>
+                                <a href="index.php" class="btn btn-secondary w-100">Reset</a>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-4">
                     <div>
-                        <h1>Financial computer</h1>
+                        <h1>Financial Calculator</h1>
                         <p>
                             We can even calculate the repayment amount for you.
                         </p>
